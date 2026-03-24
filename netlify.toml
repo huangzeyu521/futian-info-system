@@ -1,0 +1,9 @@
+# Netlify：连接 Git 仓库部署时使用；拖放 dist 时请使用 public/_redirects（构建后会复制到 dist）
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

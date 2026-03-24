@@ -1,0 +1,28 @@
+{
+  "name": "futian-info-system",
+  "version": "1.0.0",
+  "description": "深圳市福田产业投资服务有限公司信息化系统",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "import:ledger": "python scripts/export_lease_ledger.py"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.5",
+    "pinia": "^2.1.7",
+    "element-plus": "^2.4.4",
+    "axios": "^1.6.2",
+    "echarts": "^5.4.3",
+    "dayjs": "^1.11.10",
+    "@element-plus/icons-vue": "^2.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "vite": "^5.0.10",
+    "sass": "^1.69.5"
+  }
+}
+

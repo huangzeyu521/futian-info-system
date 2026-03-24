@@ -1,0 +1,386 @@
+// 福田产投信息化系统 - 全局样式
+// 主题配色：暖金色 + 深蓝色
+
+// ==================== 颜色变量 ====================
+:root {
+  // 主色 - 暖金色（品牌标识、核心操作、选中状态）
+  --color-primary: #BF933B;
+  --color-primary-light: #D4A94D;
+  --color-primary-lighter: #E8C77A;
+  --color-primary-dark: #A67D2E;
+  
+  // 辅助色 - 深蓝色（导航栏、侧边栏、主标题）
+  --color-secondary: #042178;
+  --color-secondary-light: #0A3399;
+  --color-secondary-lighter: #1A4DBB;
+  --color-secondary-dark: #021556;
+  
+  // 语义色
+  --color-success: #286634;
+  --color-success-light: #3D8A4D;
+  --color-warning: #E6A23C;
+  --color-danger: #D52A1E;
+  --color-danger-light: #E84D42;
+  --color-info: #909399;
+  
+  // 中性色
+  --color-text-primary: #1F2937;
+  --color-text-regular: #4B5563;
+  --color-text-secondary: #6B7280;
+  --color-text-placeholder: #9CA3AF;
+  --color-text-disabled: #C0C4CC;
+  
+  // 背景色
+  --bg-color: #F8F9FC;
+  --bg-color-page: #F0F2F5;
+  --bg-color-overlay: rgba(4, 33, 120, 0.6);
+  
+  // 边框色
+  --border-color: #E4E7ED;
+  --border-color-light: #EBEEF5;
+  --border-color-lighter: #F2F6FC;
+  
+  // 阴影
+  --shadow-sm: 0 1px 2px 0 rgba(4, 33, 120, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(4, 33, 120, 0.1), 0 2px 4px -1px rgba(4, 33, 120, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(4, 33, 120, 0.1), 0 4px 6px -2px rgba(4, 33, 120, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(4, 33, 120, 0.1), 0 10px 10px -5px rgba(4, 33, 120, 0.04);
+  
+  // 圆角
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  // 过渡
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+// ==================== 重置样式 ====================
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--bg-color-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  
+  &:hover {
+    color: var(--color-primary-light);
+  }
+}
+
+// ==================== Element Plus 主题覆盖 ====================
+:root {
+  --el-color-primary: #BF933B;
+  --el-color-primary-light-3: #D4A94D;
+  --el-color-primary-light-5: #DFC07A;
+  --el-color-primary-light-7: #EAD6A7;
+  --el-color-primary-light-8: #F0E3C1;
+  --el-color-primary-light-9: #F7F0DB;
+  --el-color-primary-dark-2: #A67D2E;
+  
+  --el-color-success: #286634;
+  --el-color-warning: #E6A23C;
+  --el-color-danger: #D52A1E;
+  --el-color-info: #909399;
+  
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 4px;
+  --el-border-radius-round: 20px;
+}
+
+// 按钮样式增强
+.el-button--primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border: none;
+  
+  &:hover, &:focus {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  }
+}
+
+// 表格样式增强
+.el-table {
+  --el-table-header-bg-color: #F8F9FC;
+  --el-table-header-text-color: var(--color-secondary);
+  
+  th.el-table__cell {
+    font-weight: 600;
+  }
+}
+
+// 卡片样式增强
+.el-card {
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  
+  &:hover {
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+// 菜单样式
+.el-menu {
+  border-right: none !important;
+}
+
+// ==================== 通用工具类 ====================
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-danger {
+  color: var(--color-danger);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+// ==================== 滚动条样式 ====================
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C0C4CC;
+  border-radius: 4px;
+  
+  &:hover {
+    background: #909399;
+  }
+}
+
+// ==================== 动画 ====================
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+// ==================== 页面通用样式 ====================
+.page-container {
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.page-header {
+  margin-bottom: 20px;
+  
+  .page-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin: 0;
+  }
+  
+  .page-subtitle {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+  }
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color-light);
+  margin-bottom: 16px;
+}
+
+// 统计卡片
+.stat-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    
+    &.primary {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    }
+    
+    &.secondary {
+      background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-dark) 100%);
+    }
+    
+    &.success {
+      background: linear-gradient(135deg, var(--color-success) 0%, #1D4B26 100%);
+    }
+    
+    &.danger {
+      background: linear-gradient(135deg, var(--color-danger) 0%, #A31F15 100%);
+    }
+  }
+  
+  .stat-content {
+    flex: 1;
+    margin-left: 16px;
+    
+    .stat-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-secondary);
+      line-height: 1.2;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin-top: 4px;
+    }
+  }
+  
+  .stat-trend {
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    
+    &.up {
+      color: var(--color-success);
+      background: rgba(40, 102, 52, 0.1);
+    }
+    
+    &.down {
+      color: var(--color-danger);
+      background: rgba(213, 42, 30, 0.1);
+    }
+  }
+}
+
+// 状态标签
+.status-tag {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  
+  &.available {
+    background: rgba(40, 102, 52, 0.1);
+    color: var(--color-success);
+  }
+  
+  &.rented {
+    background: rgba(191, 147, 59, 0.1);
+    color: var(--color-primary);
+  }
+  
+  &.maintenance {
+    background: rgba(230, 162, 60, 0.1);
+    color: var(--color-warning);
+  }
+  
+  &.vacant {
+    background: rgba(144, 147, 153, 0.1);
+    color: var(--color-info);
+  }
+}
+
